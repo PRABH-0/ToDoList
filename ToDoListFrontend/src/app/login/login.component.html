@@ -1,0 +1,48 @@
+@if(isLogin == true){
+    <div class="class">
+        <div class="login-wrapper">
+          <form  class="login-form" #loginForm = "ngForm" (ngSubmit)="loginUser()">
+            <h2 class="form-title">Login Form</h2>
+            <div class="input-box">
+              <input type="text" name="username" [(ngModel)]="userObj.username" required />
+              <label>Username</label>
+            </div>
+            <div class="input-box">
+              <input type="password" name="password" [(ngModel)]="userObj.password" required />
+              <label>Password</label>
+            </div>
+            <button type="submit" class="login-btn" >Login</button>
+            <p>Not Have Account <a (click)="toggleLogin()"><span class="class2">SignUp</span></a></p>
+          </form>
+        </div>
+    </div>
+}@else{
+    <div class="class">
+        <div class="login-wrapper">
+          <form class="login-form" #signUpForm="ngForm"  (ngSubmit)="signUpUser()">
+            <h2 class="form-title">SignUp Form</h2>
+      
+            <div class="input-box">
+              <input type="text" [(ngModel)]="userObj.username" name="username" required />
+              <label>Username</label>
+            </div>
+      
+            <div class="input-box">
+              <input type="email" [(ngModel)]="userObj.email" name="email" required />
+              <label>Email</label>
+            </div>
+      
+            <div class="input-box">
+              <input type="password" [(ngModel)]="userObj.password" name="password" required />
+              <label>Password</label>
+            </div>
+            <button type="submit" class="login-btn">SignUp</button>
+            <p>Not Have Account <a (click)="toggleLogin()"> <span class="class2">Login</span></a></p>
+
+          </form>
+        </div>
+    </div>
+}
+
+
+
